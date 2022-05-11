@@ -1,0 +1,37 @@
+{% extends 'components/base.html' %}
+{% load static %}
+{% block content %}
+<h1>SPAREPART PAGE</h1>
+<p>This is sparepart page</p>
+
+
+ <form action="{%url 'withdraw' sparepart.id %}" method="post">
+  {% csrf_token %}
+  
+    <div>
+        {{form.qty.label_tag}}
+        {{form.qty}} 
+        {{form.qty.errors}} 
+    <div>
+
+  <div>
+    <button type="submit">add more</button>
+</div>
+</form>
+
+
+{% if sparepart %}
+  <img src="{{ sparepart.image.url }}" width="300" height="300">
+  <p>id : {{sparepart.id}}</p>
+  <p>name : {{sparepart.name}}</p>
+  <p>part number : {{sparepart.part_number}}</p>
+  <p>qty : {{sparepart.qty}}</p>
+  <p>maker : {{sparepart.maker}}</p>
+  <p>registered_at : {{sparepart.registered_at}}</p>
+{%else%}
+  <p>No access</p>
+
+
+
+{%endif%}  
+{% endblock %}
