@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_cleanup.apps.CleanupConfig',
+    'widget_tweaks',
     'app_spareparts',
     'app_main',
     'app_authentication',
