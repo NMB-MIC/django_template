@@ -8,7 +8,6 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from .forms import LoginForm, SignUpForm
 
-
 def login_view(request):
     """login user for authenticate"""
     form = LoginForm(request.POST or None)

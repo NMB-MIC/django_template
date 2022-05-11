@@ -13,7 +13,7 @@ def spareparts(request):
     spareparts = {'spareparts':all_parts}
     return render(request,'app_spareparts/spareparts.html',context=spareparts)
 
-@login_required(login_url="../authen/login/")
+@login_required(login_url="../../authen/login/")
 def deposit(request,sparepart_id):
     """ deposit sparepart to stock"""
     one_part = Sparepart.objects.get(id=sparepart_id) 
@@ -28,7 +28,7 @@ def deposit(request,sparepart_id):
     spareparts = {'sparepart':one_part,'form':form}
     return render(request,'app_spareparts/deposit.html',context=spareparts)
 
-@login_required(login_url="../authen/login/")
+@login_required(login_url="../../authen/login/")
 def withdraw(request,sparepart_id):
     """withdraw sparepart to stock"""
     one_part = Sparepart.objects.get(id=sparepart_id)
