@@ -4,74 +4,71 @@
 {% block content-header %}ADD NEW SPAREPART{% endblock %}
 <!-- Specific Page CSS goes HERE  -->
 {% block stylesheets %}
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="/static/assets/css/font.css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="/static/assets/plugins/fontawesome-free/css/all.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="/static/assets/css/adminlte.min.css">
+<!-- Google Font: Source Sans Pro -->
+<link rel="stylesheet" href="/static/assets/css/font.css">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="/static/assets/plugins/fontawesome-free/css/all.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="/static/assets/css/adminlte.min.css">
 {% endblock stylesheets %}
 
 {% block content %}
 
-  <!-- general form elements -->
+<!-- general form elements -->
 <div class="card card-primary">
-    <div class="card-header">
-      <h3 class="card-title">INPUT</h3>
-    </div>
-    <!-- /.card-header -->
-    <!-- form start -->
-    <form action="{% url 'new_sparepart' %}"
-    method="post"
-    enctype="multipart/form-data">
+  <div class="card-header">
+    <h3 class="card-title">INPUT</h3>
+  </div>
+  <!-- /.card-header -->
+  <!-- form start -->
+  <form action="{% url 'new_sparepart' %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.non_field_errors }}
-      <div class="card-body">
-        <div class="form-group">
-            {{ form.name.label_tag }}
-            {{ form.name |add_class:"form-control" }}
-            {{ form.name.errors }}
-        <div>
-        <div class="form-group">
-            {{ form.part_number.label_tag }}
-            {{ form.part_number |add_class:"form-control"}}
-            {{ form.part_number.errors }}
-        <div>
-        <div class="form-group">
-            {{ form.sub_group.label_tag }}
-            {{ form.sub_group |add_class:"form-control" }}
-            {{ form.sub_group.errors }}
-        <div>
-        <div class="form-group">
-            {{ form.qty.label_tag }}
-            {{ form.qty |add_class:"form-control" }}
-            {{ form.qty.errors }}
-        <div>
-        <div class="form-group">
-            {{ form.maker.label_tag }}
-            {{ form.maker |add_class:"form-control"}}
-            {{ form.maker.errors }}
-        <div>
-        <div class="form-group">
-            {{ form.image.label_tag }}
-            <div class="input-group">
-              <div class="custom-file">
-                {{ form.image |add_class:"custom-file-input" }}
-                <label class="custom-file-label">Choose file</label>
-                {{ form.image.errors }}
-              </div>
-            </div>
-
-        <div>
-      </div>
-      <!-- /.card-body -->
-      <br>
-      <div class="card-footer">
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </div>
-    </form>
-  </div>
-  <!-- /.card -->
+    <div class="card-body">
+      <div class="form-group">
+        {{ form.name.label_tag }}
+        {{ form.name |add_class:"form-control" }}
+        {{ form.name.errors }}
+      <div>
+      <div class="form-group">
+        {{ form.part_number.label_tag }}
+        {{ form.part_number |add_class:"form-control"}}
+        {{ form.part_number.errors }}
+      <div>
+      <div class="form-group">
+        {{ form.sub_group.label_tag }}
+        {{ form.sub_group |add_class:"form-control" }}
+        {{ form.sub_group.errors }}
+      <div>
+      <div class="form-group">
+        {{ form.qty.label_tag }}
+        {{ form.qty |add_class:"form-control" }}
+        {{ form.qty.errors }}
+      <div>
+      <div class="form-group">
+        {{ form.maker.label_tag }}
+        {{ form.maker |add_class:"form-control"}}
+        {{ form.maker.errors }}
+      <div>
+      <div class="form-group">
+        {{ form.image.label_tag }}
+        <div class="input-group">
+          <div class="custom-file">
+            {{ form.image |add_class:"custom-file-input" }}
+            <label class="custom-file-label">Choose file</label>
+            {{ form.image.errors }}
+          </div>
+        </div>
+      <div>
+    </div>
+    <!-- /.card-body -->
+    <br>
+    <div class="card-footer" style="text-align: center">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+</div>
+<!-- /.card -->
 
 {% endblock %}
 
@@ -79,21 +76,20 @@
 <!-- Specific Page JS goes HERE  -->
 {% block javascripts %}
 
-  <!-- jQuery -->
-  <script src="/static/assets/plugins/jquery/jquery.min.js"></script>
-  <!-- Bootstrap 4 -->
-  <script src="/static/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- bs-custom-file-input -->
-  <script src="/static/assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
-  <!-- AdminLTE App -->
-  <script src="/static/assets/js/adminlte.min.js"></script>
-  <!-- AdminLTE for demo purposes -->
-  <script src="/static/assets/js/demo.js"></script>
-  <script>
+<!-- jQuery -->
+<script src="/static/assets/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="/static/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- bs-custom-file-input -->
+<script src="/static/assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+<!-- AdminLTE App -->
+<script src="/static/assets/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="/static/assets/js/demo.js"></script>
+<script>
   $(function () {
     bsCustomFileInput.init();
   });
-  </script>
+</script>
 
 {% endblock javascripts %}
-

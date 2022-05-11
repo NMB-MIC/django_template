@@ -15,11 +15,18 @@
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
-
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'logout' %}" role="button">
-          Logout  <i class="fas fa-sign-out-alt"></i>      
+        {% if user.is_authenticated %}
+          <a class="nav-link" href="{% url 'logout' %}" role="button">
+            user: {{user.username}} | Logout  
+            <i class="fas fa-sign-out-alt"></i>      
+          </a>
+        {% else %}
+          <a class="nav-link" href="{% url 'login' %}" role="button">
+          Login 
+          
         </a>
+        {% endif %}
       </li>
     </ul>
   </nav>

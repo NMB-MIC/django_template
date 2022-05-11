@@ -1,5 +1,4 @@
 {% extends "layouts/base.html" %}
-{% load static %}
 {% block title %}SPAREPART{% endblock %}
 <!-- Specific Page CSS goes HERE  -->
 {% block stylesheets %}
@@ -50,7 +49,7 @@
                                 <td>{{ part.qty }}</td>
                                 <td>{{ part.maker }}</td>
                                 <td>
-                                    <img src="{{ part.image.url }}" width="100" height="100">
+                                    <img src="{{ part.image.url }}" width="60" height="60">
                                 </td>
                                 <td>
                                     <form>
