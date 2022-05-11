@@ -1,46 +1,46 @@
 {% extends 'components/base.html' %}
-
 {% block content %}
-<h1>ADD NEW SPAREPART PAGE</h1>
-<p>add your new sparepart </p>
-<form action="{%url 'new_sparepart'%}" method="post"  enctype="multipart/form-data">
-  {% csrf_token %}
-  {{form.non_field_errors}}
-  <div>
-      {{form.name.label_tag}}
-      {{form.name}}  
-      {{form.name.errors}}
-  <div>
-  <div>
-      {{form.part_number.label_tag}}
-      {{form.part_number}}  
-      {{form.part_number.errors}}
-  <div>
-  <div>
-      {{form.sub_group.label_tag}}
-      {{form.sub_group}}  
-      {{form.sub_group.errors}}
-  <div>
-  <div>
-      {{form.qty.label_tag}}
-      {{form.qty}} 
-      {{form.qty.errors}} 
-  <div>
-    <div>
-      {{form.maker.label_tag}}
-      {{form.maker}} 
-      {{form.maker.errors}} 
-  <div>
-
-    <div>
-        {{form.image.label_tag}}
-        {{form.image}} 
-        {{form.image.errors}} 
-    <div>
-
-  <div>
-      <button type="submit">ลงทะเบียน</button>
-  </div>
-</form>
-
+    <h1>ADD NEW SPAREPART PAGE</h1>
+    <p>
+        add your new sparepart
+    </p>
+    <form action="{% url 'new_sparepart' %}"
+          method="post"
+          enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        <div>
+            {{ form.name.label_tag }}
+            {{ form.name }}
+            {{ form.name.errors }}
+        <div>
+        <div>
+            {{ form.part_number.label_tag }}
+            {{ form.part_number }}
+            {{ form.part_number.errors }}
+        <div>
+        <div>
+            {{ form.sub_group.label_tag }}
+            {{ form.sub_group }}
+            {{ form.sub_group.errors }}
+        <div>
+        <div>
+            {{ form.qty.label_tag }}
+            {{ form.qty }}
+            {{ form.qty.errors }}
+        <div>
+        <div>
+            {{ form.maker.label_tag }}
+            {{ form.maker }}
+            {{ form.maker.errors }}
+        <div>
+        <div>
+            {{ form.image.label_tag }}
+            {{ form.image }}
+            {{ form.image.errors }}
+        <div>
+        <div>
+            <button type="submit">SUBMIT</button>
+        </div>
+    </form>
 {% endblock %}
